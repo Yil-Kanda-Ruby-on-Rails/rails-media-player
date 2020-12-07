@@ -1,37 +1,68 @@
-<p id="notice"><%= notice %></p>
-
-<p>
-  <strong>Name:</strong>
-  <%= @song.name %>
-</p>
-
-<p>
-  <strong>Artist:</strong>
-  <%= @song.artist %>
-</p>
-
-<p>
-  <strong>Album:</strong>
-  <%= @song.album %>
-</p>
-
-<p>
-  <strong>Genre:</strong>
-  <%= @song.genre %>
-</p>
-
-<% if @song.image.attached? %>
-  <!-- @song.image.present? will always return true, use attached? to check presence -->
-  <p>
-    <strong>Image:</strong>
-    <br>
-    <%= image_tag @song.image %>
-  </p>
-<% end %>
-
-<% if @song.audio.attached? %>
-  <%= audio_tag url_for(@song.audio), controls: true, preload: "none", id: "music" %>
-<% end %>
-
-<%= link_to 'Edit', edit_song_path(@song) %> |
-<%= link_to 'Back', songs_path %>
+<div class="music-app container my-5">
+  <div class="row">
+    <div class="col-lg-4 col-md-6 mb-4">
+      <div class="card mobile-rounded">
+        <div class="card-body p-1 mt-5">
+          <div class="row">
+            <div class="col-md-12 mb-4 d-flex justify-content-between mt-2">
+              <%= link_to '', songs_path, class: "fas fa-angle-left fa-2x ml-2 pl-1"%>
+              <%= link_to '', edit_song_path(@song), class: "fas fa-ellipsis-h fa-lg mt-2 mr-3" %>
+            </div>
+          </div>
+          <div class="row">
+            <div class="col-md-12 music-player d-flex justify-content-center align-items-center">
+              <div class="view rounded-circle z-depth-1 music-img animated pulse infinite">
+                <% if @song.image.attached? %>
+                  <%= image_tag @song.image %>
+                <% end %>
+              </div>
+            </div>
+          </div>
+          <div class="row">
+            <div class="col-md-12 mb-4 text-center">
+              <h5 class="h5 font-weight-bold"><%= @song.name %></h5>
+              <p class="mb-2"><%= @song.artist %></p>
+            </div>
+          </div>
+          <div class="row">
+            <div class="col-md-12 mt-4 mb-5">
+              <div class="ml-1 mr-n2" id="mobile-box">
+                <% if @song.audio.attached? %>
+                  <%= audio_tag url_for(@song.audio), controls: true, autoplay: false, id: "music", class: "d-none" %>
+                <% end %>
+                <div id="audioplayer">
+                  <div id="timeline">
+                    <div id="playhead"></div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="row">
+            <div class="col-md-12 mb-4">
+              <div class="d-flex justify-content-between mx-3">
+              <i class="fas fa-retweet"></i>
+              <i class="fas fa-angle-double-left fa-lg"></i>
+              <i class="far fa-play-circle fa-2x" id="pButton"></i>
+              <i class="fas fa-angle-double-right fa-lg"></i>
+              <i class="fas fa-random"></i>
+              </div>
+            </div>
+          </div>
+          <div class="row">
+            <div class="col-md-12 mb-4">
+              <div class="d-flex justify-content-between mx-3">
+                <%= link_to '', @song.audio, class: "fas fa-download fa-lg" %>
+                <%= link_to '', {}, class: "fas fa-redo fa-lg" %>
+                <%= link_to '', @song, class: "fas fa-trash fa-lg", method: :delete, data: { confirm: 'Are you sure?' } %>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="touch-button-wrapper d-flex justify-content-center align-items-center">
+          <div class="touch-button"></div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
