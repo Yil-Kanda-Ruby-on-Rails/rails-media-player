@@ -1,3 +1,122 @@
-// Place all the styles related to the Songs controller here.
-// They will automatically be included in application.css.
-// You can use Sass (SCSS) here: https://sass-lang.com/
+/* #pButton {
+float: left; } */
+body {
+  margin: 0;
+  padding: 0;
+}
+.music-app {
+  .carousel-multi-item {
+    .carousel-inner.v-2 {
+      .carousel-item-right.active {
+        transform: translateX(33%);
+      }
+      .carousel-item-next {
+        transform: translateX(33%);
+      }
+      .carousel-item-left.active {
+        transform: translateX(-33%);
+      }
+      .carousel-item-prev {
+        transform: translateX(-33%);
+      }
+    }
+    .carousel-indicators {
+      li {
+        height: 2px;
+        width: 1.25rem;
+        max-width: 1.25rem;
+        background-color: #4285f4;
+        margin-bottom: 0;
+        border-radius: 0;
+      }
+    }
+    .rounded {
+      border-radius: 0.3rem !important;
+    }
+  }
+  .blue-gradient-rgba {
+    background: linear-gradient(40deg, rgba(69, 202, 252, 0.5), rgba(48, 63, 159, 0.5)) !important;
+  }
+  .blue-gradient-rgba-player {
+    background: linear-gradient(40deg, rgba(69, 202, 252, 0.6), rgba(48, 63, 159, 0.6)) !important;
+  }
+  .peach-gradient-rgba {
+    background: linear-gradient(40deg, rgba(255, 216, 111, 0.7), rgba(252, 98, 98, 0.7)) !important;
+  }
+  .purple-gradient-rgba {
+    background: linear-gradient(40deg, rgba(255, 110, 196, 0.7), rgba(120, 115, 245, 0.7)) !important;
+  }
+  .aqua-gradient-rgba {
+    background: linear-gradient(40deg, rgba(32, 150, 255, 0.7), rgba(5, 255, 163, 0.7)) !important;
+  }
+  .font-small {
+    font-size: 0.8rem;
+  }
+  .mobile-rounded {
+    border-radius: 2.5rem;
+  }
+  .card-body {
+    background-color: #fbfbfe;
+  }
+  .touch-button-wrapper {
+    height: 3rem;
+    .touch-button {
+      width: 40px;
+      height: 40px;
+      background-color: #f2efef;
+      border-radius: 50%;
+    }
+  }
+  .music-player {
+    height: 20rem;
+    .music-img {
+      width: 10rem;
+      height: 10rem;
+    }
+  }
+  .active-item {
+    border-bottom: 2px solid #000;
+  }
+  .playlists {
+    .media {
+      img {
+        height: 60px;
+        width: 60px;
+      }
+    }
+  }
+}
+.card {
+  h5 {
+    a {
+      color: #0d47a1;
+      &:hover {
+        color: #072f6b;
+      }
+    }
+  }
+}
+#timeline {
+  width: 90%;
+  height: 2px;
+  margin-top: 20px;
+  margin-left: 10px;
+  float: left;
+  -webkit-border-radius: 15px;
+  border-radius: 15px;
+  background: rgba(0, 0, 0, 0.3);
+}
+#pButton {
+  margin-top: -.55rem;
+  float: none;
+  cursor: pointer;
+}
+#playhead {
+  width: 8px;
+  height: 8px;
+  -webkit-border-radius: 50%;
+  border-radius: 50%;
+  margin-top: -3px;
+  background: black;
+  cursor: pointer;
+}
